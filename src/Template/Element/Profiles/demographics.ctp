@@ -18,7 +18,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="textfield textfield--floatingLabel">
-                            <?= $this->Form->select('state_id', $state,
+                            <?= $this->Form->select('state_id', $states,
                                 ['empty' => 'Choose State:']
                             ); ?>
                         </div>
@@ -27,7 +27,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="textfield textfield--floatingLabel">
-                            <?= $this->Form->select('education_level_id', $edu,
+                            <?= $this->Form->select('education_level_id', $educationLevels,
                                 ['empty' => 'Level of Education:']
                             ); ?>
                         </div>
@@ -42,7 +42,7 @@
                                 ['value' => 0, 'text' => 'Female', 'name' => 'gender', 'id' => 'female']
                             ]); ?>
                         </fieldset>
-                        <?= $this->Form->select('age_id', $age,
+                        <?= $this->Form->select('age_id', $ages,
                             ['empty' => 'Age Range:']
                         ); ?>
                     </div>

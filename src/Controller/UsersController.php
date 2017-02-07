@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\Event\Event;
+use Cake\ORM\TableRegistry;
 
 /**
  * Users Controller
@@ -118,17 +119,24 @@ class UsersController extends AppController
     // Login
     public function login() {
         if ($this->request->is('ajax') || $this->request->query('provider')) {
-            if ($this->request->query('provider')) {
+            /*if ($this->request->query('provider')) {
                 $config_file_path = 'c:/xampp/htdocs/forecast_clash/vendor/hybridauth/hybridauth/hybridauth/config.php';
                 set_include_path('c:/xampp/htdocs/');
                 require_once( "forecast_clash/vendor/hybridauth/hybridauth/hybridauth/Hybrid/Auth.php" );
                 $hybridauth = new \Hybrid_Auth( $config_file_path );
-            }
+            }*/
             $user = $this->Auth->identify();
             if ($user) {
                 $this->Auth->setUser($user);
+                $query = TableRegistry::get('Avatars')->find()->where(['id' => $user['avatar_id']]);
+                $result = $query->first();
                 $session = $this->request->session();
-                $session->write('User.id', $user['id']);
+                $session->write([
+                    'User.id' => $user['id'],
+                    'User.first_name'=> h($user['first_name']),
+                    'User.last_name'=> h($user['last_name']),
+                    'User.avatar' => $result['avatar_img']
+                ]);
                 echo json_encode(['msg' => 'Logged in!', 'result' => 1, 'regLog' => 1]);
                 die;
             } else {

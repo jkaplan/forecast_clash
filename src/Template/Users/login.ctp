@@ -1,6 +1,6 @@
 <div class="auth">
     <div class="auth-container">
-        <a href="#" class="logo"><img src="../webroot/img/logo-light-blue.png" alt=""> </a>
+        <a href="#" class="logo"><img src="../webroot/img/logo-white.png" alt=""> </a>
         <div class="card">
             <div class="auth-content">
                 <p class="text-xs-center">LOGIN TO CONTINUE</p>
@@ -37,7 +37,7 @@
             </div>
         </div>
         <div class="text-xs-center">
-            <a href="http://localhost/forecast_clash/pages/home" class="btn btn-secondary rounded btn-sm"> <i class="fa fa-arrow-left"></i> Back to dashboard </a>
+            <a href="/forecast_clash/pages/home" class="btn btn-secondary rounded btn-sm"> <i class="fa fa-arrow-left"></i> Back to dashboard </a>
         </div>
     </div>
 </div>
