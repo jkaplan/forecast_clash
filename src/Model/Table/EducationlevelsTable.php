@@ -44,7 +44,7 @@ class EducationlevelsTable extends Table
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->int('id')
+            ->integer('id')
             ->allowEmpty('id', 'create');
 
         $validator

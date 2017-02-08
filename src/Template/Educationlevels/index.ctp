@@ -17,7 +17,7 @@
         <tbody>
             <?php foreach ($educationlevels as $educationlevel): ?>
             <tr>
-                <td><?= h($educationlevel->id) ?></td>
+                <td><?= $this->Number->format($educationlevel->id) ?></td>
                 <td><?= h($educationlevel->education) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $educationlevel->id]) ?>

@@ -4,12 +4,16 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Educationlevel Entity
+ * Badge Entity
  *
  * @property int $id
- * @property string $education
+ * @property string $badge_name
+ * @property string $badge_desc
+ * @property string $badge_img
+ *
+ * @property \App\Model\Entity\BadgesUser[] $badges_users
  */
-class Educationlevel extends Entity
+class Badge extends Entity
 {
 
     /**

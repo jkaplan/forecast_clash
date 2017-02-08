@@ -50,7 +50,7 @@ class AppController extends Controller
                         'username' => 'email',
                         'password' => 'password'
                     ]
-                ],
+                ]/*,
                 'ADmad/HybridAuth.HybridAuth' => [
                     // All keys shown below are defaults
                     'fields' => [
@@ -69,7 +69,7 @@ class AppController extends Controller
                     // HybridAuthController::authenticated() which handles persisting
                     // user info to AuthComponent and redirection.
                     'hauth_return_to' => null
-                ]
+                ]*/
             ],
             'loginAction' => [
                 'controller' => 'users',
