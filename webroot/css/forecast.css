@@ -38,6 +38,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     color: #4f5f6f;
     overflow-x: hidden;
+    font-size: 15px;
 }
 
 .main-wrapper {
@@ -4164,7 +4165,7 @@ pre {
 }
 
 .leaflet-sidebar > .leaflet-control {
-    padding: 48px 18px;
+    padding: 8px 18px;
     height: auto;
     min-height: 300px;
     overflow: visible;
@@ -4272,4 +4273,13 @@ h1 {
 
 .left-230 {
     left: 0;
+}
+
+label {
+    font-weight: normal;
+}
+
+.event-filters,
+.exp-filters {
+    display: inline;
 }

@@ -27,6 +27,8 @@
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
 </head>
      <!-- Navigation -->
 <body>
@@ -37,8 +39,12 @@
                 <?= $this->fetch('content') ?>
             </div>
 
-            <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
             <?= $this->Html->script('bootstrap.min'); ?>
+            <script src="webroot/js/leaflet.js"></script>
+            <script src="webroot/js/leaflet-heat.js"></script>
+            <script src="webroot/js/L.Control.Sidebar.js"></script>
+            <script src="webroot/js/heatmaps.js"></script>
+   
 
             <!-- login script -->
             <?= $this->Html->script('login'); ?>
