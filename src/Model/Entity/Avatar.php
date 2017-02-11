@@ -4,12 +4,14 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Educationlevel Entity
+ * Avatar Entity
  *
  * @property int $id
- * @property string $education
+ * @property string $avatar_img
+ *
+ * @property \App\Model\Entity\User[] $users
  */
-class Educationlevel extends Entity
+class Avatar extends Entity
 {
 
     /**

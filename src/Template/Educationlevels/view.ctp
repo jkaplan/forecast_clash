@@ -16,7 +16,7 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Id') ?></th>
-            <td><?= $educationlevel->id ? __('Yes') : __('No'); ?></td>
+            <td><?= $this->Number->format($educationlevel->id) ?></td>
         </tr>
     </table>
 </div>

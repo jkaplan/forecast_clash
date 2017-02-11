@@ -1,15 +1,15 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Badges User'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('New Badgesuser'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Badges'), ['controller' => 'Badges', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Badge'), ['controller' => 'Badges', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="badgesUsers index large-9 medium-8 columns content">
-    <h3><?= __('Badges Users') ?></h3>
+<div class="badgesusers index large-9 medium-8 columns content">
+    <h3><?= __('Badgesusers') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
@@ -23,18 +23,18 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($badgesUsers as $badgesUser): ?>
+            <?php foreach ($badgesusers as $badgesuser): ?>
             <tr>
-                <td><?= $this->Number->format($badgesUser->id) ?></td>
-                <td><?= $badgesUser->has('user') ? $this->Html->link($badgesUser->user->id, ['controller' => 'Users', 'action' => 'view', $badgesUser->user->id]) : '' ?></td>
-                <td><?= $badgesUser->has('badge') ? $this->Html->link($badgesUser->badge->id, ['controller' => 'Badges', 'action' => 'view', $badgesUser->badge->id]) : '' ?></td>
-                <td><?= $this->Number->format($badgesUser->badge_count) ?></td>
-                <td><?= $this->Number->format($badgesUser->silver) ?></td>
-                <td><?= $this->Number->format($badgesUser->gold) ?></td>
+                <td><?= $this->Number->format($badgesuser->id) ?></td>
+                <td><?= $badgesuser->has('user') ? $this->Html->link($badgesuser->user->id, ['controller' => 'Users', 'action' => 'view', $badgesuser->user->id]) : '' ?></td>
+                <td><?= $badgesuser->has('badge') ? $this->Html->link($badgesuser->badge->id, ['controller' => 'Badges', 'action' => 'view', $badgesuser->badge->id]) : '' ?></td>
+                <td><?= $this->Number->format($badgesuser->badge_count) ?></td>
+                <td><?= $this->Number->format($badgesuser->silver) ?></td>
+                <td><?= $this->Number->format($badgesuser->gold) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $badgesUser->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $badgesUser->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $badgesUser->id], ['confirm' => __('Are you sure you want to delete # {0}?', $badgesUser->id)]) ?>
+                    <?= $this->Html->link(__('View'), ['action' => 'view', $badgesuser->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $badgesuser->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $badgesuser->id], ['confirm' => __('Are you sure you want to delete # {0}?', $badgesuser->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

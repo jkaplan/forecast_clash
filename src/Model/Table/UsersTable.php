@@ -11,16 +11,14 @@ use Cake\Validation\Validator;
  *
  * @property \Cake\ORM\Association\HasMany $BadgesUsers
  * @property \Cake\ORM\Association\HasMany $FinalScores
- * @property \Cake\ORM\Association\HasMany $HailForecasts
+ * @property \Cake\ORM\Association\HasMany $Forecasts
  * @property \Cake\ORM\Association\HasMany $HistoricalForecasts
  * @property \Cake\ORM\Association\HasMany $Profiles
  * @property \Cake\ORM\Association\HasMany $StatesUsers
  * @property \Cake\ORM\Association\HasMany $Stats
  * @property \Cake\ORM\Association\HasMany $TeamsUsers
- * @property \Cake\ORM\Association\HasMany $TornadoForecasts
  * @property \Cake\ORM\Association\HasMany $WeeklyContestForecasts
  * @property \Cake\ORM\Association\HasMany $WeeklyScores
- * @property \Cake\ORM\Association\HasMany $WindForecasts
  *
  * @method \App\Model\Entity\User get($primaryKey, $options = [])
  * @method \App\Model\Entity\User newEntity($data = null, array $options = [])
@@ -57,7 +55,7 @@ class UsersTable extends Table
         $this->hasMany('FinalScores', [
             'foreignKey' => 'user_id'
         ]);
-        $this->hasMany('HailForecasts', [
+        $this->hasMany('Forecasts', [
             'foreignKey' => 'user_id'
         ]);
         $this->hasMany('HistoricalForecasts', [
@@ -75,16 +73,10 @@ class UsersTable extends Table
         $this->hasMany('TeamsUsers', [
             'foreignKey' => 'user_id'
         ]);
-        $this->hasMany('TornadoForecasts', [
-            'foreignKey' => 'user_id'
-        ]);
         $this->hasMany('WeeklyContestForecasts', [
             'foreignKey' => 'user_id'
         ]);
         $this->hasMany('WeeklyScores', [
-            'foreignKey' => 'user_id'
-        ]);
-        $this->hasMany('WindForecasts', [
             'foreignKey' => 'user_id'
         ]);
     }
@@ -121,6 +113,12 @@ class UsersTable extends Table
                 'email' => [
                     'rule' => 'email',
                     'message' => "Please use a valid email format"
+                ]
+            ])->add('email', [
+                'unique' => [
+                    'rule' => 'validateUnique', 
+                    'provider' => 'table', 
+                    'message' => 'This email is already associated with an active account'
                 ]
             ])
             ->requirePresence('email', 'create')
