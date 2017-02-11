@@ -16,15 +16,14 @@
                         </div>
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs pull-right" role="tablist">
-                            <li role="presentation" class="active"><a href="#all" aria-controls="all" role="tab" data-toggle="tab">All</a></li>
-                            <li role="presentation"><a href="#team" aria-controls="team" role="tab" data-toggle="tab">Dirty Steve and the Sear Rays</a></li>
+                            <li role="presentation" class="active"><a href="#all" aria-controls="all" role="tab" data-toggle="tab">All Players</a></li>
+                            <li role="presentation"><a href="#team" aria-controls="team" role="tab" data-toggle="tab">Dirty Steve and the Sea Rays</a></li>
                         </ul>
                     </div>
                     <div class="card-block">
                         <!-- Tab panes -->
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="all">
-                                <p>All Players</p>
                                 <table class="table table-striped table-bordered table-hover flip-content">
                                     <thead class="flip-header">
                                         <tr>
@@ -132,7 +131,6 @@
                                 </table>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="team">
-                                <p> Dirty Steve and the Sea Rays</p>
                                 <table class="table table-striped table-bordered table-hover flip-content">
                                     <thead class="flip-header">
                                         <tr>
@@ -150,53 +148,53 @@
                                             <td>1</td>
                                             <td>Bob</td>
                                             <td>16382</td>
-                                            <td>27.5 miles</td>
-                                            <td>27.5 miles</td>
-                                            <td>27.5 miles</td>
-                                            <td>27.5 miles</td>
+                                            <td>367.5 miles</td>
+                                            <td>367.5 miles</td>
+                                            <td>367.5 miles</td>
+                                            <td>367.5 miles</td>
                                         </tr>
                                         <tr class="even gradeC">
                                             <td>2</td>
                                             <td>Sam</td>
                                             <td>16382</td>
-                                            <td>27.5 miles</td>
-                                            <td>27.5 miles</td>
-                                            <td>27.5 miles</td>
-                                            <td>27.5 miles</td>
+                                            <td>367.5 miles</td>
+                                            <td>367.5 miles</td>
+                                            <td>367.5 miles</td>
+                                            <td>367.5 miles</td>
                                         </tr>
                                         <tr class="odd gradeX">
                                             <td>3</td>
                                             <td>Bob</td>
                                             <td>16382</td>
-                                            <td>27.5 miles</td>
-                                            <td>27.5 miles</td>
-                                            <td>27.5 miles</td>
-                                            <td>27.5 miles</td>
+                                            <td>367.5 miles</td>
+                                            <td>367.5 miles</td>
+                                            <td>367.5 miles</td>
+                                            <td>367.5 miles</td>
                                         </tr>
                                         <tr class="even gradeC">
                                             <td>4</td>
                                             <td>Sam</td>
                                             <td>16382</td>
-                                            <td>27.5 miles</td>
-                                            <td>27.5 miles</td>
-                                            <td>27.5 miles</td>
-                                            <td>27.5 miles</td>
+                                            <td>367.5 miles</td>
+                                            <td>367.5 miles</td>
+                                            <td>367.5 miles</td>
+                                            <td>367.5 miles</td>
                                         </tr>
                                         <tr class="odd gradeX">
                                             <td>5</td>
                                             <td>Bob</td>
                                             <td>16382</td>
-                                            <td>27.5 miles</td>
-                                            <td>27.5 miles</td>
-                                            <td>27.5 miles</td>
-                                            <td>27.5 miles</td>
+                                            <td>367.5 miles</td>
+                                            <td>367.5 miles</td>
+                                            <td>367.5 miles</td>
+                                            <td>367.5 miles</td>
                                         </tr>
                                         <tr class="even gradeC">
                                             <td>6</td>
                                             <td>Sam</td>
                                             <td>16382</td>
-                                            <td>27.5 miles</td>
-                                            <td>27.5 miles</td>
+                                            <td>367.5 miles</td>
+                                            <td>367.5 miles</td>
                                             <td>27.5 miles</td>
                                             <td>27.5 miles</td>
                                         </tr>

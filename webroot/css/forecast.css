@@ -3557,6 +3557,7 @@ pre {
 
 .header .header-block-collapse {
     padding-right: 5px;
+    margin: 0 18px;
 }
 
 @media (max-width: 767px) {
@@ -4155,7 +4156,7 @@ pre {
 }
 
 .heatmap #map {
-    height: 430px;
+    height: 480px;
 }
 
 .leaflet-control-container {
@@ -4200,7 +4201,7 @@ label {
 
 .heatmap .leaflet-sidebar.left.visible {
     width: initial;
-    min-width: 250px;
+    min-width: 300px;
 }
 
 .leaflet-tile {
@@ -4264,11 +4265,15 @@ h1 {
     position: absolute;
     top: 12px;
     left: 12px;
-    border: 1px solid rgb(79, 95, 111);
+    border: 1px solid rgb(255, 255, 255);
     text-align: center;
     border-radius: 100%;
     padding: 6px 8px;
     z-index: 100;
+}
+
+.sidebar-header .fa-times::before {
+    color: rgb(255, 255, 255);
 }
 
 .left-230 {
@@ -4282,4 +4287,30 @@ label {
 .event-filters,
 .exp-filters {
     display: inline;
+}
+
+.heatmap #sidebar {
+    max-width: 279px;
+    width: 100%;
+}
+
+.leaflet-sidebar.left.visible ~ .leaflet-left {
+    left: 279px;
+}
+
+#ui-datepicker-div {
+    z-index: 2000 !important;
+    background-color: #fff;
+}
+
+fieldset {
+    margin: 1em 0;
+    border: 0;
+    padding: 0;
+    position: relative;
+}
+
+#sidebar h4 {
+    font-size: 1.4em;
+    font-weight: normal;
 }

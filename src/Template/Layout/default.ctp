@@ -44,6 +44,8 @@
             <script src="webroot/js/leaflet-heat.js"></script>
             <script src="webroot/js/L.Control.Sidebar.js"></script>
             <script src="webroot/js/heatmaps.js"></script>
+            <script src="webroot/js/jquery-ui.min.js"></script>
+
    
 
             <!-- login script -->

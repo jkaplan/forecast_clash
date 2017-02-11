@@ -9,7 +9,7 @@
             <span class="mobile-menu-label">Menu</span>
         </button>
     </div>
-    <div class="header-block header-block-search hidden-sm-down">
+    <div class="header-block header-block-search hidden-sm-down hidden-xs">
         <form role="search">
             <div class="input-container"> <i class="fa fa-search"></i>
                 <input type="search" placeholder="Search Historical Data Archive">
