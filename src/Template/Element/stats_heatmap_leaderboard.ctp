@@ -96,7 +96,7 @@
                                     <div id="map"></div>
                                 </article>
                             </div>
-                            <!--                     <div role="tabpanel" class="tab-pane" id="heatmap_team">
+                            <!-- <div role="tabpanel" class="tab-pane" id="heatmap_team">
                         <div id="map_team"></div>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="heatmap_user">

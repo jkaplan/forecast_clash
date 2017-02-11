@@ -4,35 +4,40 @@
 <script type="text/javascript">
 $(document).ready(function(){
 
-
-
-
     $(function() {
 
-        var data = [ ["January", 10], ["February", 8], ["March", 4], ["April", 13], ["May", 17], ["June", 9] ];
+        var data = [ ["Tornado", 10], ["Hail", 8], ["Wind", 4]];
 
-        $.plot("#placeholder", [ data ], {
+        $.plot("#flot-pie-chart", [ data ], {
             series: {
                 bars: {
                     show: true,
-                    barWidth: 0.6,
-                    align: "center"
+                    barWidth: .7,
+                    align: "center",
+                    fillColor: "rgb(61, 182, 239)",
+                    hightlightColor: "rgb(61,182,239)",
+                    lineWidth: 0
                 }
             },
             xaxis: {
                 mode: "categories",
-                tickLength: 0
-            }
+                tickLength: 0,
+                color: 'rgb(61, 182, 239)'
+            },
         });
 
-        // Add the Flot version string to the footer
-
-        $("#footer").prepend("Flot " + $.plot.version + " &ndash; ");
     });
 
-});
-</script>
 
+    var xaxisLabel = $("<div class='axisLabel xaxisLabel'></div>").text("Weather Event").appendTo($('.flot-chart'));
+
+    var yaxisLabel = $("<div class='axisLabel yaxisLabel'></div>").text("Miles from Target").appendTo($('.flot-chart'));
+    // yaxisLabel.css("margin-top", yaxisLabel.width() / 2 - 20);
+
+});
+
+
+</script>
 
 <!-- Started in stats_leaderboard.ctp -->
 <div class="row">
@@ -60,9 +65,11 @@ $(document).ready(function(){
                                             <h3 class="title"> Pie Chart Example </h3>
                                         </div>
                                         <section class="example">
-                                            <div class="flot-chart">
+<!--                                         <label class="y-axis-label">Miles from Event Location</label>
+ -->                                            <div class="flot-chart">
                                                 <div class="flot-chart-pie-content" id="flot-pie-chart"></div>
-                                            </div>
+<!--                                                 <label class="x-axis-label">Weather Event</label>
+ -->                                            </div>
                                         </section>
                                     </div>
                             </div>
@@ -76,14 +83,6 @@ $(document).ready(function(){
 <!-- Started in stats_leaderboard.ctp -->
 </section>
 </article>
-
-
-
-
-
-
-
-
 
 
 
