@@ -12,7 +12,7 @@ L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {
 
 var sidebar = L.control.sidebar('sidebar', {
     closeButton: true,
-    position: 'left'
+    position: 'right'
 });
 
 
@@ -65,36 +65,26 @@ var hm_amateur = L.heatLayer([
     [36.52467226, -97.56, 1111.9]
 ], { radius: 25 }).addTo(map);
 
-var amateur = document.getElementById('all_amateur');
-var meteorologist = document.getElementById('all_meteorologists');
-var both = document.getElementById('all_both');
+var amateur = document.getElementById('amateur');
+var meteorologist = document.getElementById('mets');
+var both = document.getElementById('both');
 
-$(document).ready(function() {
-    $(amateur).change(
+
+    $(amateur).click(
         function() {
             if ($(amateur).is(':checked')) {
                 hm_amateur.addTo(map);
-                hm_met.removeFrom(map);
             } else {
 
             }
         });
-    $(meteorologist).change(
+    $(meteorologist).click(
         function() {
             if ($(this).is(':checked')) {
-                hm_met.addTo(map);
-                hm_amateur.removeFrom(map);
-            }
-        });
-    $(both).change(
-        function() {
-            if ($(this).is(':checked')) {
-                hm_amateur.addTo(map);
                 hm_met.addTo(map);
             }
         });
 
-})
 
 sidebar.on('show', function() {
     console.log('Sidebar will be visible.');

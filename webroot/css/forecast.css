@@ -36,7 +36,7 @@ body {
     height: 100%;
     min-height: 100%;
     font-family: 'Open Sans', sans-serif;
-    color: #4f5f6f;
+    color: #333;
     overflow-x: hidden;
     font-size: 15px;
 }
@@ -152,7 +152,7 @@ body {
     color: #97A4B1;
     padding: 20px;
     line-height: 30px;
-    font-size: 26px;
+    font-size: 1.5em;
     font-weight: 600;
     margin: 0;
 }
@@ -1142,7 +1142,7 @@ body {
 
 @media (min-width: 1200px) {
     .card .card-header .header-block {
-        padding: 0.5rem 20px;
+        padding: 0.5rem 8px;
     }
 }
 
@@ -1293,7 +1293,7 @@ body {
 
 @media (min-width: 1200px) {
     .card-block {
-        padding: 20px;
+        padding: 12px;
     }
 }
 
@@ -3411,7 +3411,7 @@ pre {
 }
 
 .sidebar .nav {
-    font-size: 14px;
+    font-size: 17px;
 }
 
 .sidebar .nav li a:focus,
@@ -3469,7 +3469,7 @@ pre {
 
 .sidebar .nav > li > a i {
     margin-right: 5px;
-    font-size: 16px;
+    font-size: 17px;
 }
 
 .sidebar .nav > li > a i.arrow {
@@ -3527,7 +3527,29 @@ pre {
         opacity: 1;
     }
 }
+@media (min-width: 992px) and (max-width: 1199px) {
+    .heatmap .leaflet-sidebar {
+        width: 279px;
+    }
+    .heatmap .leaflet-sidebar.left.visible ~ .leaflet-left {
+        left: 279px;
+    }
+    .heatmap .leaflet-sidebar.right.visible ~ .leaflet-right {
+        right: 279px;
+    }
+}
 
+@media (min-width: 1200px) {
+    .heatmap .leaflet-sidebar {
+        width: 279px;
+    }
+    .heatmap .leaflet-sidebar.left.visible ~ .leaflet-left {
+        left: 279px;
+    }
+    .heatmap .leaflet-sidebar.right.visible ~ .leaflet-right {
+        right: 279px;
+    }
+}
 .header .header-block-buttons {
     text-align: center;
     margin-left: auto;
@@ -4156,13 +4178,7 @@ pre {
 }
 
 .heatmap #map {
-    height: 550px;
-}
-
-.leaflet-control-container {
-    position: relative;
-    top: 36px;
-    left: 36px;
+    height: 445px;
 }
 
 .leaflet-sidebar > .leaflet-control {
@@ -4286,13 +4302,16 @@ h1 {
 
 label {
     font-weight: normal;
+    margin-bottom:0;
 }
 
 .event-filters,
 .exp-filters {
-    display: inline;
+    margin-top: 12px;
 }
-
+.event-filters strong, .exp-filters strong{
+    margin-bottom: 6px;
+}
 .heatmap #sidebar {
     max-width: 279px;
     width: 100%;
@@ -4308,16 +4327,9 @@ label {
     background-color: #fff;
 }
 
-fieldset {
-    margin: 1em 0;
-    border: 0;
-    padding: 0;
-    position: relative;
-}
-
 #sidebar h4 {
-    font-size: 1.4em;
-    font-weight: normal;
+    font-size: 1.5em;
+    font-weight: 600;
 }
 
 
@@ -4325,6 +4337,7 @@ fieldset {
 
 .can-toggle {
     position: relative;
+    margin: 3px 0;
 }
 
 .can-toggle *,
@@ -4477,10 +4490,6 @@ fieldset {
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
 }
 
-.can-toggle label {
-    font-size: 14px;
-}
-
 .can-toggle label .can-toggle__switch {
     height: 36px;
     -webkit-box-flex: 0;
@@ -4525,9 +4534,6 @@ fieldset {
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
 }
 
-.can-toggle.can-toggle--size-small label {
-    font-size: 13px;
-}
 
 .can-toggle.can-toggle--size-small label .can-toggle__switch {
     height: 28px;
@@ -4555,3 +4561,21 @@ fieldset {
 .can-toggle.can-toggle--size-small label .can-toggle__switch:hover:after {
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
 }
+/* Flot Charts */
+.flot-chart-bar{
+    width: 600px;
+    height:300px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

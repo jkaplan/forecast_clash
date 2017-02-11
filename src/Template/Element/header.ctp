@@ -73,7 +73,8 @@
             <li class="profile dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                                 <div class="img" style="background-image: url('')"> </div> <span class="name">
-                      Steve Miller
+                      Steve Miller&nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i>
+
                     </span> </a>
                 <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
                     <a class="dropdown-item" href="#"> <i class="fa fa-user icon"></i> Profile </a>
