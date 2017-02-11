@@ -3,7 +3,7 @@ $logged = $session->check('User.id');
 echo '<header class="header '.(($logged) ? "" : "header-logged-out").'">';
 ?>
     <div class="header-block header-block-collapse hidden-lg-up">
-        <button class="collapse-btn" id="sidebar-collapse-btn"><i class="fa fa-bars"></i></button>
+        <button class="collapse-btn" id="sidebar-collapse-btn"><i class="fa fa-bars"></i>Menu</button>
     </div>
     <div class="header-block header-block-search hidden-sm-down hidden-xs">
         <form role="search">
