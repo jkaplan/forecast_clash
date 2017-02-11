@@ -1,9 +1,9 @@
-// All Players Heatmap
-
+// initialize leaflet map 
 var map = L.map('map', {
-    doubleClickZoom: false
+    doubleClickZoom: false,
 });
-map.setView([35.2226, -97.4395], 9); // will probably want to set view to user location if given
+
+map.setView([35.2226, -97.4395], 7);
 
 L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {
     maxZoom: 18,
@@ -12,8 +12,9 @@ L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {
 
 var sidebar = L.control.sidebar('sidebar', {
     closeButton: true,
-    position: 'left'
+    position: 'right'
 });
+
 
 map.addControl(sidebar);
 
@@ -29,6 +30,62 @@ map.on('click', function(e) {
     console.log("Lat, Lon : " + lat + ", " + lng);
 
 });
+
+// Heatmap Layers
+var hm_met = L.heatLayer([
+    [35.35635, -97.456397, 11111], // lat, lng, intensity
+    [35.345635, -97.4397, 1111],
+    [35.3456737, -97.56, 1111],
+    [35.45684, -97.56, 1111],
+    [35.4784, -97.456397, 1111],
+    [35.47847, -97.4397, 1111],
+    [35.4568, -97.56, 1111],
+    [35.4784, -97.56, 1111],
+    [35.46848, -97.456397, 1111],
+    [35.3647, -97.4397, 1111],
+    [35.367, -97.56, 1111],
+    [35.5683874, -97.56, 1111]
+], { radius: 25 }).addTo(map);
+
+var hm_amateur = L.heatLayer([
+    [36.368, -97.4395, 1111.7], 
+    [36.90450, -97.876, 1111.7],
+    [36.0896, -97.567, 1111.9],
+    [36.680, -97.4397, 1111.9],
+    [36.68, -97.56, 1111.9],
+    [36.3336463, -97.456397, 1111.9],
+    [36.115432, -97.4397, 1111.9],
+    [36.3457, -97.56, 1111.9],
+    [36.3738, -97.4397, 1111.9],
+    [36.4844, -97.4397, 1111.7],
+    [36.232226, -97.4397, 1111.7],
+    [36.37367, -97.876, 1111.7],
+    [36.2226, -97.567, 1111.9],
+    [36.467, -97.4397, 1111.9],
+    [36.52467226, -97.56, 1111.9]
+], { radius: 25 }).addTo(map);
+
+var amateur = document.getElementById('amateur');
+var meteorologist = document.getElementById('mets');
+var both = document.getElementById('both');
+
+
+    $(amateur).click(
+        function() {
+            if ($(amateur).is(':checked')) {
+                hm_amateur.addTo(map);
+            } else {
+
+            }
+        });
+    $(meteorologist).click(
+        function() {
+            if ($(this).is(':checked')) {
+                hm_met.addTo(map);
+            }
+        });
+
+
 sidebar.on('show', function() {
     console.log('Sidebar will be visible.');
 });
@@ -48,62 +105,3 @@ sidebar.on('hidden', function() {
 L.DomEvent.on(sidebar.getCloseButton(), 'click', function() {
     console.log('Close button clicked.');
 });
-var amateur = document.getElementById('amateur');
-var meteorologist = document.getElementById('meteorologist');
-var both = document.getElementById('both');
-console.log('test');
-
-// // All Amateur Heatmap Points
-// var heatmap_all_amateur = L.heatLayer([
-//     [35.5226, -97.4395, 0.7], // lat, lng, intensity
-//     [35.55, -97.876, 1.7],
-//     [35.54, -97.567, 0.9],
-//     [35.56, -97.4397, 0.9],
-//     [35.54, -97.56, 0.9],
-//     [35.54, -97.456397, 0.9],
-//     [35.54, -97.4397, 0.9],
-//     [35.54, -97.56, 0.9],
-//     [35.565, -97.4397, 0.9],
-//     [35.54, -97.4397, 0.7],
-//     [35.44, -97.4397, 0.7]
-
-// ], {
-//     radius: 25
-// }).addTo(map);
-
-// // All Met Heatmap Points
-// var heatmap_all_mets = L.heatLayer([
-//     [35.2226, -97.4395, 0.7], // lat, lng, intensity
-//     [35.7845, -97.876, 1.7],
-//     [35.44, -97.567, 0.9],
-//     [35.46, -97.4397, 0.9],
-//     [35.544, -97.56, 0.9],
-//     [35.44, -97.456397, 0.9],
-//     [35.44, -97.4397, 0.9],
-//     [35.44, -97.56, 0.9],
-//     [35.565, -97.4397, 0.9],
-//     [35.44, -97.4397, 0.7],
-//     [35.44, -97.4397, 0.7]
-
-// ], {
-//     radius: 25
-// }).addTo(map);
-
-// // All Both Met/Amateur Heatmap Points
-// var heatmap_all_both = L.heatLayer([
-//     [35.2226, -97.4395, 0.7], // lat, lng, intensity
-//     [35.45, -97.876, 1.7],
-//     [35.44, -97.567, 0.9],
-//     [35.46, -97.4397, 0.9],
-//     [35.44, -97.56, 0.9],
-//     [35.44, -97.456397, 0.9],
-//     [35.44, -97.4397, 0.9],
-//     [35.44, -97.56, 0.9],
-//     [35.565, -97.4397, 0.9],
-//     [35.44, -97.4397, 0.7],
-//     [35.44, -97.4397, 0.7]
-
-// ], {
-//     radius: 25
-// }).addTo(map);
-
