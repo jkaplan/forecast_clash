@@ -1,5 +1,5 @@
 <div class="sidebar-overlay" id="sidebar-overlay">
-</div>
+</div>  <script src="webroot/js/heatmap.js"></script>
 <article class="content dashboard-page">
     <!-- Ends on stats_heatmap.ctp -->
     <section class="section">
@@ -340,6 +340,7 @@
             </div>
         </div>
     </div>
+      <?= $this->Html->script('heatmaps'); ?>
 <link rel="stylesheet" href="webroot/css/default.css">
 <link rel="stylesheet" href="webroot/css/default.date.css">
 <script src="webroot/js/picker.js"></script>
@@ -395,13 +396,5 @@ $('a[role="tab"]').on('shown.bs.tab', function(e) {
     console.log(e.relatedTarget);
 });
 </script>
-<!-- <div class="can-toggle">
-<input id="a" type="checkbox">
-<label for="a">
-<div class="can-toggle__switch" data-checked="On" data-unchecked="Off"></div>
-<div class="can-toggle__label-text">.can-toggle</div>
-</label>
-</div> -->
 
-
-<!-- Continued on stats_charting_row.ctp -->
+<!-- Continued on stats_flot_bar.ctp -->

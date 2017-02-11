@@ -23,7 +23,12 @@
 
     <?= $this->Html->css(['bootstrap.min', 'leaflet', 'L.Control.Sidebar.css','forecast', 'font-awesome.min']) ?>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
-    
+    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+    <?= $this->Html->script('bootstrap.min'); ?>
+    <?= $this->Html->script('leaflet'); ?>
+    <?= $this->Html->script('leaflet-heat'); ?>
+    <?= $this->Html->script('L.Control.Sidebar'); ?>
+
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
@@ -37,8 +42,8 @@
                 <?= $this->fetch('content') ?>
             </div>
 
-            <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
-            <?= $this->Html->script('bootstrap.min'); ?>
+
+
 
             <!-- login script -->
             <?= $this->Html->script('login'); ?>
