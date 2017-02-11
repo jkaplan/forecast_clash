@@ -41,7 +41,7 @@ class UsersController extends AppController
     public function view($id = null)
     {
         $user = $this->Users->get($id, [
-            'contain' => ['BadgesUsers', 'FinalScores', 'HailForecasts', 'HistoricalForecasts', 'Profiles', 'StatesUsers', 'Stats', 'TeamsUsers', 'TornadoForecasts', 'WeeklyContestForecasts', 'WeeklyScores', 'WindForecasts']
+            'contain' => ['BadgesUsers', 'FinalScores', 'Forecasts', 'HistoricalForecasts', 'Profiles', 'StatesUsers', 'Stats', 'TeamsUsers', 'WeeklyContestForecasts', 'WeeklyScores']
         ]);
 
         $this->set('user', $user);
@@ -149,7 +149,8 @@ class UsersController extends AppController
     // Logout
     public function logout() {
         $this->Auth->logout();
-        return;
+        $this->request->session()->destroy();
+        $this->redirect(['controller' => 'pages', 'action' => 'home']);
     }
     
     // Registration

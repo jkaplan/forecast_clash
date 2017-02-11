@@ -19,15 +19,13 @@ use Cake\Auth\DefaultPasswordHasher;
  * @property \App\Model\Entity\Profile[] $profiles
  * @property \App\Model\Entity\BadgesUser[] $badges_users
  * @property \App\Model\Entity\FinalScore[] $final_scores
- * @property \App\Model\Entity\HailForecast[] $hail_forecasts
+ * @property \App\Model\Entity\Forecasts[] $forecasts
  * @property \App\Model\Entity\HistoricalForecast[] $historical_forecasts
  * @property \App\Model\Entity\StatesUser[] $states_users
  * @property \App\Model\Entity\Stat[] $stats
  * @property \App\Model\Entity\TeamsUser[] $teams_users
- * @property \App\Model\Entity\TornadoForecast[] $tornado_forecasts
  * @property \App\Model\Entity\WeeklyContestForecast[] $weekly_contest_forecasts
  * @property \App\Model\Entity\WeeklyScore[] $weekly_scores
- * @property \App\Model\Entity\WindForecast[] $wind_forecasts
  */
 class User extends Entity
 {

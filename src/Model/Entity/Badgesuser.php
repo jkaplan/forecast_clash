@@ -4,12 +4,19 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Educationlevel Entity
+ * Badgesuser Entity
  *
  * @property int $id
- * @property string $education
+ * @property int $user_id
+ * @property int $badge_id
+ * @property int $badge_count
+ * @property int $silver
+ * @property int $gold
+ *
+ * @property \App\Model\Entity\User $user
+ * @property \App\Model\Entity\Badge $badge
  */
-class Educationlevel extends Entity
+class Badgesuser extends Entity
 {
 
     /**
