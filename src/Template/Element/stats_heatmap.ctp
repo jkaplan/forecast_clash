@@ -41,30 +41,52 @@
                                     <div class="col-md-6">
                                         <div class="event-filters">
                                             <p><strong>Event</strong></p>
-                                            <label for="tornado">
-                                                <input id="tornado" type="radio" name="event" value="tornado"> Tornado
-                                            </label>
-                                            <label for="hail">
-                                                <input id="hail" type="radio" name="event" value="hail"> Hail
-                                            </label>
-                                            <label for="wind">
-                                                <input id="wind" type="radio" name="event" value="wind"> Wind
-                                            </label>
+
+                                            <div class="can-toggle can-toggle--size-small">
+                                              <input id="tornado" type="checkbox">
+                                              <label for="tornado">
+                                                <div class="can-toggle__label-text">Tornado</div>
+                                                <div class="can-toggle__switch" data-checked="On" data-unchecked="Off"></div>
+                                              </label>
+                                            </div>
+
+                                            <div class="can-toggle can-toggle--size-small">
+                                              <input id="hail" type="checkbox">
+                                              <label for="hail">
+                                                <div class="can-toggle__label-text">Hail</div>
+                                                <div class="can-toggle__switch" data-checked="On" data-unchecked="Off"></div>
+                                              </label>
+                                            </div>
+
+                                            <div class="can-toggle can-toggle--size-small">
+                                              <input id="wind" type="checkbox">
+                                              <label for="wind">
+                                                <div class="can-toggle__label-text">Wind</div>
+                                                <div class="can-toggle__switch" data-checked="On" data-unchecked="Off"></div>
+                                              </label>
+                                            </div>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="exp-filters">
                                             <p><strong>Experience</strong></p>
-                                            <label for="amateur">
-                                                <input id="all_amateur" type="radio" name="experience" value="amateur"> Amateur
-                                            </label>
-                                            <label for="meteorologists">
-                                                <input id="all_meteorologists" type="radio" name="experience" value="meteorologists"> Mets
-                                            </label>
-                                            <label for="both">
-                                                <input id="all_both" type="radio" name="experience" value="both"> Both
-                                            </label>
+                                          <div class="can-toggle can-toggle--size-small">
+                                              <input id="amateur" type="checkbox">
+                                              <label for="amateur">
+                                                <div class="can-toggle__label-text">Enthusiasts</div>
+                                                <div class="can-toggle__switch" data-checked="On" data-unchecked="Off"></div>
+                                              </label>
+                                            </div>
+
+                                            <div class="can-toggle can-toggle--size-small">
+                                              <input id="mets" type="checkbox">
+                                              <label for="mets">
+                                                <div class="can-toggle__label-text">Meteorologists</div>
+                                                <div class="can-toggle__switch" data-checked="On" data-unchecked="Off"></div>
+                                              </label>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -146,3 +168,13 @@ $('a[role="tab"]').on('shown.bs.tab', function (e) {
 });
 
 </script>
+
+
+<!-- <div class="can-toggle">
+  <input id="a" type="checkbox">
+  <label for="a">
+    <div class="can-toggle__switch" data-checked="On" data-unchecked="Off"></div>
+    <div class="can-toggle__label-text">.can-toggle</div>
+  </label>
+</div> -->
+

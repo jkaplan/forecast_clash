@@ -3,7 +3,7 @@
         <div class="sidebar-header">
             <span class="hidden-lg hidden-md">
                 <span class="mobile-nav-close">
-                    <i class="fa fa-times" aria-hidden="true"></i>
+                    <i class="fa fa-times" aria-hidden="true"><span class="close-label">Close</span></i>
                 </span>
             </span>
             <div class="brand">
@@ -22,3 +22,11 @@
         </nav>
     </div>
 </aside>
+<script>
+$(document).$(function() {
+        $("#sidebar-collapse-btn").click(function(){
+    $(".mobile-nav-close").fadeIn(3000);
+});
+
+});
+</script>

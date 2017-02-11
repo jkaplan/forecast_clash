@@ -112,7 +112,7 @@
 .picker__nav--next:hover {
   cursor: pointer;
   color: #000000;
-  background: #b1dcfb;
+  background: rgba(61, 182, 239,.3);
 }
 .picker__nav--disabled,
 .picker__nav--disabled:hover,
@@ -192,7 +192,7 @@
 .picker__day--outfocus:hover {
   cursor: pointer;
   color: #000000;
-  background: #b1dcfb;
+  background: rgba(61, 182, 239,.3);
 }
 .picker__day--highlighted {
   border-color: rgb(61, 182, 239);
@@ -201,7 +201,7 @@
 .picker--focused .picker__day--highlighted {
   cursor: pointer;
   color: #000000;
-  background: #b1dcfb;
+  background: rgba(61, 182, 239,.3);
 }
 .picker__day--selected,
 .picker__day--selected:hover,
@@ -244,13 +244,13 @@
 .picker__button--close:hover {
   cursor: pointer;
   color: #000000;
-  background: #b1dcfb;
-  border-bottom-color: #b1dcfb;
+  background: rgba(61, 182, 239,.3);
+  border-bottom-color: rgba(61, 182, 239,.3);
 }
 .picker__button--today:focus,
 .picker__button--clear:focus,
 .picker__button--close:focus {
-  background: #b1dcfb;
+  background: rgba(61, 182, 239,.3);
   border-color: rgb(61, 182, 239);
   outline: none;
 }

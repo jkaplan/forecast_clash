@@ -91,7 +91,7 @@
 }
 @media (min-height: 40.125em) {
   .picker__frame {
-    margin-bottom: 7.5%;
+    margin-bottom: 15.5%;
   }
 }
 /**
@@ -127,7 +127,6 @@
     border: 1px solid #777777;
     border-top-color: #898989;
     border-bottom-width: 0;
-    border-radius: 5px 5px 0 0;
     box-shadow: 0 12px 36px 16px rgba(0, 0, 0, 0.24);
   }
 }
@@ -135,7 +134,6 @@
   .picker__box {
     font-size: 1.5em;
     border-bottom-width: 1px;
-    border-radius: 5px;
   }
 }
 /**
