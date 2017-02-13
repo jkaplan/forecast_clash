@@ -7,7 +7,7 @@
                 </span>
             </span>
             <div class="brand">
-                <a href="#" class="logo"><img src="webroot/img/logo-light-blue.png" alt="Forecast Clash Logo"> </a>
+                <a href="#" class="logo"><?= $this->Html->image('logo-light-blue.png', ['alt' => 'Forecast Clash Logo']) ?></a>
             </div>
         </div>
         <nav class="menu">

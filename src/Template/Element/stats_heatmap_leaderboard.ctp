@@ -5,7 +5,7 @@
     <section class="section">
         <div class="row">
             <div class="col-md-12">
-                <h1>Forecast Clash Statistics</h1>
+                <h1>Stats and Leaderboards</h1>
             </div>
         </div>
         <div class="row sameheight-container">
