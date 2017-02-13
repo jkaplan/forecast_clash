@@ -4,10 +4,10 @@ namespace App\Test\Fixture;
 use Cake\TestSuite\Fixture\TestFixture;
 
 /**
- * EducationlevelsFixture
+ * WeathereventsFixture
  *
  */
-class EducationlevelsFixture extends TestFixture
+class WeathereventsFixture extends TestFixture
 {
 
     /**
@@ -17,13 +17,13 @@ class EducationlevelsFixture extends TestFixture
      */
     // @codingStandardsIgnoreStart
     public $fields = [
-        'id' => ['type' => 'integer', 'length' => 4, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
-        'education' => ['type' => 'string', 'length' => 40, 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
+        'id' => ['type' => 'integer', 'length' => 9, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
+        'weather' => ['type' => 'string', 'length' => 20, 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
         ],
         '_options' => [
-            'engine' => 'InnoDB',
+            'engine' => 'MyISAM',
             'collation' => 'latin1_swedish_ci'
         ],
     ];
@@ -37,7 +37,7 @@ class EducationlevelsFixture extends TestFixture
     public $records = [
         [
             'id' => 1,
-            'education' => 'Lorem ipsum dolor sit amet'
+            'weather' => 'Lorem ipsum dolor '
         ],
     ];
 }

@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\BadgesusersTable;
+use App\Model\Table\ForecastsTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\BadgesusersTable Test Case
+ * App\Model\Table\ForecastsTable Test Case
  */
-class BadgesusersTableTest extends TestCase
+class ForecastsTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\BadgesusersTable
+     * @var \App\Model\Table\ForecastsTable
      */
-    public $Badgesusers;
+    public $Forecasts;
 
     /**
      * Fixtures
@@ -24,13 +24,12 @@ class BadgesusersTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.badgesusers',
+        'app.forecasts',
         'app.users',
         'app.social_profiles',
         'app.badges_users',
         'app.badges',
         'app.final_scores',
-        'app.hail_forecasts',
         'app.historical_forecasts',
         'app.profiles',
         'app.education_levels',
@@ -39,10 +38,9 @@ class BadgesusersTableTest extends TestCase
         'app.ages',
         'app.stats',
         'app.teams_users',
-        'app.tornado_forecasts',
         'app.weekly_contest_forecasts',
         'app.weekly_scores',
-        'app.wind_forecasts'
+        'app.weather_events'
     ];
 
     /**
@@ -53,8 +51,8 @@ class BadgesusersTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('Badgesusers') ? [] : ['className' => 'App\Model\Table\BadgesusersTable'];
-        $this->Badgesusers = TableRegistry::get('Badgesusers', $config);
+        $config = TableRegistry::exists('Forecasts') ? [] : ['className' => 'App\Model\Table\ForecastsTable'];
+        $this->Forecasts = TableRegistry::get('Forecasts', $config);
     }
 
     /**
@@ -64,7 +62,7 @@ class BadgesusersTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->Badgesusers);
+        unset($this->Forecasts);
 
         parent::tearDown();
     }

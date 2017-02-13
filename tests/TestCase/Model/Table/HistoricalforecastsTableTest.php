@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\BadgesusersTable;
+use App\Model\Table\HistoricalforecastsTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\BadgesusersTable Test Case
+ * App\Model\Table\HistoricalforecastsTable Test Case
  */
-class BadgesusersTableTest extends TestCase
+class HistoricalforecastsTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\BadgesusersTable
+     * @var \App\Model\Table\HistoricalforecastsTable
      */
-    public $Badgesusers;
+    public $Historicalforecasts;
 
     /**
      * Fixtures
@@ -24,13 +24,14 @@ class BadgesusersTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.badgesusers',
+        'app.historicalforecasts',
         'app.users',
         'app.social_profiles',
         'app.badges_users',
         'app.badges',
         'app.final_scores',
-        'app.hail_forecasts',
+        'app.forecasts',
+        'app.weather_events',
         'app.historical_forecasts',
         'app.profiles',
         'app.education_levels',
@@ -39,10 +40,8 @@ class BadgesusersTableTest extends TestCase
         'app.ages',
         'app.stats',
         'app.teams_users',
-        'app.tornado_forecasts',
         'app.weekly_contest_forecasts',
-        'app.weekly_scores',
-        'app.wind_forecasts'
+        'app.weekly_scores'
     ];
 
     /**
@@ -53,8 +52,8 @@ class BadgesusersTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('Badgesusers') ? [] : ['className' => 'App\Model\Table\BadgesusersTable'];
-        $this->Badgesusers = TableRegistry::get('Badgesusers', $config);
+        $config = TableRegistry::exists('Historicalforecasts') ? [] : ['className' => 'App\Model\Table\HistoricalforecastsTable'];
+        $this->Historicalforecasts = TableRegistry::get('Historicalforecasts', $config);
     }
 
     /**
@@ -64,7 +63,7 @@ class BadgesusersTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->Badgesusers);
+        unset($this->Historicalforecasts);
 
         parent::tearDown();
     }
