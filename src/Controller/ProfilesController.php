@@ -124,14 +124,9 @@ class ProfilesController extends AppController
             $data = $this->request->data;
             $session = $this->request->session();
             $data['user_id'] = $session->read('User.id');
-            if ($query = $this->Profiles->find()
-                ->where([
-                    'user_id' => $data['user_id']
-                ])
-            ) {
-                $result = $query->first();
-                $profileId = $result['id'];
-                $profile = $this->Profiles->get($profileId);
+            $query = $this->Profiles->find()->where(['user_id' => $data['user_id']]);
+            if ($query->toArray()) {
+                $profile = $query->first();
             } else {
                 $profile = $this->Profiles->newEntity();
             }
@@ -169,9 +164,5 @@ class ProfilesController extends AppController
         }
         $session = $this->request->session();
         $this->set('user_id', $session->read('User.id'));
-    }
-    
-    public function beforeFilter(Event $event){
-        $this->Auth->allow();
     }
 }

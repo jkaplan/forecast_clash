@@ -193,6 +193,7 @@ Type::build('date')
     ->useImmutable();
 Type::build('datetime')
     ->useImmutable();
+Type::map('point', 'App\Database\Type\PointType');
 
 /*
  * Custom Inflector rules, can be set to correctly pluralize or singularize
