@@ -5,12 +5,14 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
-
+use Cake\Database\Schema\Table as Schema;
+    
 /**
  * Historicalforecasts Model
  *
  * @property \Cake\ORM\Association\BelongsTo $Users
  * @property \Cake\ORM\Association\BelongsTo $WeatherEvents
+ * @property \Cake\ORM\Association\BelongsTo $AdminEvents
  *
  * @method \App\Model\Entity\Historicalforecast get($primaryKey, $options = [])
  * @method \App\Model\Entity\Historicalforecast newEntity($data = null, array $options = [])
@@ -45,14 +47,18 @@ class HistoricalforecastsTable extends Table
             'foreignKey' => 'weather_event_id',
             'joinType' => 'INNER'
         ]);
+        $this->belongsTo('AdminEvents', [
+            'foreignKey' => 'admin_event_id',
+            'joinType' => 'INNER'
+        ]);
     }
-    
-        protected function _initializeSchema(Schema $schema)
+
+    protected function _initializeSchema(Schema $schema)
     {
         $schema->columnType('location', 'point');
         return $schema;
     }
-
+    
     /**
      * Default validation rules.
      *
@@ -97,6 +103,7 @@ class HistoricalforecastsTable extends Table
     {
         $rules->add($rules->existsIn(['user_id'], 'Users'));
         $rules->add($rules->existsIn(['weather_event_id'], 'WeatherEvents'));
+        $rules->add($rules->existsIn(['admin_event_id'], 'AdminEvents'));
 
         return $rules;
     }

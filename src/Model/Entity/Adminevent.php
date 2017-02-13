@@ -9,6 +9,7 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property \Cake\I18n\Time $start_date
  * @property \Cake\I18n\Time $end_date
+ * @property int $multiplier
  */
 class Adminevent extends Entity
 {

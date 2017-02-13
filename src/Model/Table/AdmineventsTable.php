@@ -57,6 +57,11 @@ class AdmineventsTable extends Table
             ->requirePresence('end_date', 'create')
             ->notEmpty('end_date');
 
+        $validator
+            ->integer('multiplier')
+            ->requirePresence('multiplier', 'create')
+            ->notEmpty('multiplier');
+
         return $validator;
     }
 }
