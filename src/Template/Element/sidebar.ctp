@@ -1,6 +1,6 @@
-<aside class="sidebar">
+<aside class="sidebar-navigation">
     <div class="sidebar-container">
-        <div class="sidebar-header">
+        <div class="sidebar-navigation-header">
             <span class="hidden-lg hidden-md">
                 <span class="mobile-nav-close">
                     <i class="fa fa-times" aria-hidden="true"><span class="close-label">Close</span></i>
