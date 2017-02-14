@@ -8,11 +8,12 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property int $user_id
- * @property $location
+ * @property string $location
  * @property int $distance
  * @property int $weather_event_id
  * @property \Cake\I18n\Time $forecast_date
  * @property int $forecast_length
+ * @property int $admin_event_id
  *
  * @property \App\Model\Entity\User $user
  * @property \App\Model\Entity\Weatherevent $weather_event
