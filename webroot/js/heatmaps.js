@@ -22,7 +22,6 @@ setTimeout(function() {
     sidebar.show();
 }, 500);
 
-
 map.on('click', function(e) {
     sidebar.show();
     var lat = e.latlng.lat;

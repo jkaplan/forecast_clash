@@ -65,7 +65,7 @@ body {
     position: relative;
     width: 100%;
     padding-left: 230px;
-    min-height: 100vh;
+    /*    min-height: 100vh;*/
     margin: 0 auto;
     left: 0;
     background-color: #f0f3f6;
@@ -2061,6 +2061,10 @@ label,
     width: 200px;
     margin: 0 auto;
     margin-bottom: 24px;
+}
+
+.modal-body {
+    padding: 18px;
 }
 
 .modal-body.modal-tab-container {
@@ -4180,18 +4184,21 @@ pre {
 
 #map {
     height: 100vh;
+    z-index: 0;
 }
 
 .heatmap #map {
     height: 445px;
 }
 
+.heatmap #sidebar {
+    padding: 12px;
+}
+
 .leaflet-sidebar > .leaflet-control {
-    padding: 8px 18px;
     height: auto;
     min-height: 300px;
     overflow: visible;
-    background-color: rgba(255, 255, 255, .80);
 }
 
 .leaflet-sidebar .close {
@@ -4205,6 +4212,17 @@ pre {
 
 #heatmap-sidebar ul {
     padding: 12px 24px;
+}
+
+#play-sidebar .sidebar-header {
+    background: rgb(61, 182, 239);
+    color: #fff;
+    padding: 8px 18px;
+    box-shadow: 0 1px 1px 0 #ccc;
+}
+
+#play-sidebar .sidebar-content {
+    padding: 18px;
 }
 
 .nav-tabs > li.active > a,
@@ -7663,4 +7681,70 @@ rect {
 .success-notification .notification {
     border-left: 2px solid rgb(61, 182, 239);
     margin: 12px 0;
+}
+
+
+/* Play Map */
+
+#play-sidebar .climacon {
+    background: #333;
+}
+
+.svg-icons svg {
+    width: 18%;
+}
+
+ul {
+    list-style-type: circle;
+    padding-left: 24px;
+}
+
+.sidebar-footer .scoring-btn,
+.sidebar-footer .forecast-btn {
+    margin: 0 18px 18px 18px;
+    float: right;
+}
+
+.scoring i {
+    position: absolute;
+    cursor: pointer;
+}
+
+.scoring p {
+    float: left;
+}
+
+.fill {
+    fill: rgb(61, 182, 239);
+    transition: fill .1s;
+}
+
+.time label {
+    display: inline;
+}
+
+.easy-button-button {
+    background-color: #333 !important;
+    width: 75px !important;
+    height: 75px !important;
+}
+
+.easy-button-button span {
+    color: #fff;
+}
+
+.tornado-control-active svg {
+    position: relative;
+    left: -6px;
+}
+
+.hail-control-active svg {
+    position: relative;
+    left: -6px;
+    top: -12px;
+}
+
+.wind-control-active svg {
+    position: relative;
+    left: -6px;
 }
