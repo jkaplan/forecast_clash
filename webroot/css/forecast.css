@@ -7748,3 +7748,14 @@ ul {
     position: relative;
     left: -6px;
 }
+
+
+/* Easy Butotn */
+
+.leaflet-bar button:last-of-type,
+.leaflet-bar button:first-of-type {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}

@@ -76,8 +76,6 @@
 <?= $this->Html->script('L.Control.Sidebar'); ?>
 <?= $this->Html->script('play_map'); ?>
 <?= $this->Html->script('leaflet.awesome-markers.min'); ?>
-<?= $this->Html->script('svg-icons'); ?>
-<?= $this->Html->script('icons-subclass'); ?>
 <link rel="stylesheet" href="https://unpkg.com/leaflet-easybutton@2.0.0/src/easy-button.css">
 <script src="https://unpkg.com/leaflet-easybutton@2.0.0/src/easy-button.js"></script>
 <link rel="stylesheet" href="webroot/css/default.css">
