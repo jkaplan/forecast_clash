@@ -119,7 +119,7 @@ class ProfilesController extends AppController
         return $this->redirect(['action' => 'index']);
     }
         
-    public function profile() {
+    public function demographics() {
         if ($this->request->is('ajax')) {
             $data = $this->request->data;
             $session = $this->request->session();

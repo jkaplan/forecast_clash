@@ -36,28 +36,27 @@
                         <div role="tabpanel" class="tab-pane active" id="tornado-control">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <form action="#" class="search-filter forecast-tornado">
+                                    <form action="#" class="search-filter forecast-tornado" id="forecastForm">
                                         <h4><span class="forecast-type">Tornado</span> Forecast</h4>
                                         <fieldset>
                                             <label for="latlng">Lat/Lng</label>
-                                            <input id="latlng" name="latlng" type="text" value="">
+                                            <input id="latlng" name="location" type="text" value="">
                                         </fieldset>
                                         <fieldset>
                                             <label for="event_date">Date</label>
-                                            <input type="text" class="datepicker" id="event_date">
+                                            <input type="text" name="forecast_date" class="datepicker" id="event_date">
                                         </fieldset>
                                         <fieldset class="time">
                                             <h5><strong>Time</strong></h5>
                                             <label for="am">AM</label>
-                                            <input type="radio" name="time" id="am" value="0">
+                                            <input type="radio" name="am_pm" id="am" value="0">
                                             <br>
                                             <label for="pm">PM</label>
-                                            <input type="radio" name="time" id="pm" value="1">
+                                            <input type="radio" name="am_pm" id="pm" value="1">
                                         </fieldset>
-                                        <input type="radio" class="" name="event-type" id="tornado-event" value="1">
-                                        <input type="radio" class="" name="event-type" id="hail-event" value="2">
-                                        <input type="radio" class="" name="event-type" id="wind-event" value="3">
-                                        <input type="text" name="radius" id="radius" value="5">
+                                        <input type="radio" class="" name="weather_event_id" id="tornado-event" value="1">
+                                        <input type="radio" class="" name="weather_event_id" id="hail-event" value="2">
+                                        <input type="radio" class="" name="weather_event_id" id="wind-event" value="3">
                                     </form>
                                 </div>
                             </div>
@@ -68,7 +67,7 @@
         </div>
         <div class="sidebar-footer">
             <button class="btn btn-primary scoring-btn">To Forecast</button>
-            <input class="btn btn-primary forecast-btn" type="submit" value="Make Your Forecast">
+            <input class="btn btn-primary forecast-btn login" type="submit" value="Make Your Forecast" id="forecast">
         </div>
     </div>
     <div id="map"></div>
@@ -77,16 +76,13 @@
 <?= $this->Html->script('L.Control.Sidebar'); ?>
 <?= $this->Html->script('play_map'); ?>
 <?= $this->Html->script('leaflet.awesome-markers.min'); ?>
-<?= $this->Html->script('leaflet.social'); ?>
 <link rel="stylesheet" href="https://unpkg.com/leaflet-easybutton@2.0.0/src/easy-button.css">
 <script src="https://unpkg.com/leaflet-easybutton@2.0.0/src/easy-button.js"></script>
 <link rel="stylesheet" href="webroot/css/default.css">
 <link rel="stylesheet" href="webroot/css/default.date.css">
 <script src="webroot/js/picker.js"></script>
 <script src="webroot/js/picker.date.js"></script>
-
 <script>
-
 // Get tomorrows date for min date
 var tomorrow = new Date();
 var dd_tomorrow = tomorrow.getDate() + 1;

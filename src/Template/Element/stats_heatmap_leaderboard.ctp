@@ -1,11 +1,11 @@
 <div class="sidebar-overlay" id="sidebar-overlay">
-</div>  <script src="webroot/js/heatmap.js"></script>
+</div>
 <article class="content dashboard-page">
     <!-- Ends on stats_heatmap.ctp -->
     <section class="section">
         <div class="row">
             <div class="col-md-12">
-                <h1>Stats and Leaderboards</h1>
+                <h1>Forecast Clash Statistics</h1>
             </div>
         </div>
         <div class="row sameheight-container">
@@ -19,7 +19,7 @@
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs pull-right" role="tablist">
                             <li role="presentation" class="active all-tab"><a href="#heatmap_all" aria-controls="heatmap_all" role="tab" data-toggle="tab">All Players</a></li>
-                            <li role="presentation" class="team-tab"><a href="#heatmap_team" aria-controls="heatmap_team" role="tab" data-toggle="tab">Dirty Steve and the Sea Rays</a></li>
+                            <li role="presentation" class="team-tab"><a href="#heatmap_team" aria-controls="heatmap_team" role="tab" data-toggle="tab">Steve Miller and the Fujiwhara Effect</a></li>
                             <li role="presentation" class="user-tab"><a href="#heatmap_user" aria-controls="heatmap_user" role="tab" data-toggle="tab">Steve Miller</a></li>
                         </ul>
                     </div>
@@ -115,7 +115,7 @@
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs pull-right" role="tablist">
                         <li role="presentation" class="active"><a href="#all" aria-controls="all" role="tab" data-toggle="tab">All Players</a></li>
-                        <li role="presentation"><a href="#team" aria-controls="team" role="tab" data-toggle="tab">Dirty Steve and the Sea Rays</a></li>
+                        <li role="presentation"><a href="#team" aria-controls="team" role="tab" data-toggle="tab">Steve Miller and the Fujiwhara Effect</a></li>
                     </ul>
                 </div>
                 <div class="card-block">

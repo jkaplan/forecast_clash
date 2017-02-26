@@ -69,7 +69,7 @@ echo '<header class="header '.(($logged) ? "" : "header-logged-out").'">';
                     if ($logged) {
                         echo $session->read('User.first_name')." ".$session->read('User.last_name');
                     } else {
-                        echo 'Please login';
+                        echo '<a style="display: inline;" href="https://forecastclash.com/forecast_clash/users/login"><strong>Please login</strong></a>';
                     } ?>
                     
                     <img src="" alt=""></span>

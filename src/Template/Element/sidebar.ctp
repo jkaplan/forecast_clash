@@ -13,10 +13,10 @@
         <nav class="menu">
             <ul class="nav metismenu" id="sidebar-menu">
                 <li>
-                    <a href="play.php"> <i class="fa fa-gamepad"></i> Play </a>
+                    <a href="/forecast_clash"> <i class="fa fa-gamepad"></i> Play </a>
                 </li>
                 <li class="active">
-                    <a href="stats.php"> <i class="fa fa-bar-chart"></i> Leaderboard </a>
+                    <a href="/forecast_clash/pages/stats"> <i class="fa fa-bar-chart"></i> Leaderboard </a>
                 </li>
                 <li>
                     <a href="team.php"> <i class="fa fa-users" aria-hidden="true"></i> Team </a>

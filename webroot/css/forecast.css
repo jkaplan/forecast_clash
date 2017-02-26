@@ -62,7 +62,8 @@ body {
 }
 
 .app {
-    position: relative;
+    /*    position: relative;
+*/
     width: 100%;
     padding-left: 230px;
     /*    min-height: 100vh;*/
@@ -1342,6 +1343,11 @@ body {
 input,
 textarea {
     outline: none;
+}
+
+select {
+    width: 100%;
+    padding: 6px 12px;
 }
 
 .form-group .row {
@@ -3374,7 +3380,9 @@ pre {
 .modal .modal-footer .btn {
     margin-bottom: 0;
 }
-
+.modal-footer{
+    padding: 15px 0;
+}
 .sidebar-navigation {
     background-color: #333;
     width: 230px;
@@ -7758,4 +7766,13 @@ ul {
     border-bottom-right-radius: 0 !important;
     border-top-left-radius: 0 !important;
     border-top-right-radius: 0 !important;
+}
+
+
+/* Leaflet.Social */
+
+.leaflet-social-control a {
+    font-size: 200%;
+    color: darkslateblue;
+    text-decoration: none;
 }

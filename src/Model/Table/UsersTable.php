@@ -207,6 +207,12 @@ class UsersTable extends Table
 
         $validator
             ->allowEmpty('date_created');
+        
+        $validator
+            ->allowEmpty('password_reset_token');
+        
+        $validator
+            ->allowEmpty('hashval');
 
         return $validator;
     }

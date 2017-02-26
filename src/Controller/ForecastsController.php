@@ -121,32 +121,61 @@ class ForecastsController extends AppController
     }
     
     public function forecast() {
-        $user = 20;//$this->request->session()->read('User.id');
-        $table = $this->Forecasts;
-        $point = [[31.3421, 52.1243]];
-        $forecastDate = '2017-02-15';
-        $am_pm = 1;
-        $weather = 1;
-        //Look if user and weather event combo already exists in Forecasts
-        if ($query = $table->find('all')->where(['user_id' => $user, 'weather_event_id' => $weather])->first()) {
-            $result = $query;
-        //Look if user exists but not weather event    
-        } else if ($query = $table->find('all')->where(['user_id' => $user])->first()) {
-            $result = $query;
-            $result->weather_event_id = $weather;
-        //if neither exists, create new entity with current logged in user and selected weather
-        } else {
-            $result = $table->newEntity();
-            $result->user_id = $user;
-            $result->weather_event_id = $weather;
-        }   
-        $result->location = $point;
-        $result->forecast_date = $forecastDate;
-        $result->am_pm = $am_pm;
-        $this->Forecasts->save($result);
-      //  $query = $table->find('all')->where(['user_id' => $user, 'weather_event_id' => $weather])->first();
-     //   debug($query); debug($query['location']);
-        return $this->redirect(['controller' => 'pages', 'action' => 'home']);
+        if ($this->request->is('ajax')) {
+            $user = $this->request->session()->read('User.id');
+            $data = $this->request->data;
+            $a = rand(10,99);
+            $b = rand(10,99);
+            $c = rand(10000000,99999999);
+            $d = rand(10000000,99999999);
+            $lat = floatVal($a.'.'.$c);
+            $lon = floatVal($b.'.'.$d);
+           // $point = [$lat,$lon];//[37.34264435, 52.34759236];
+           // $point = "POINT(31.3421 52.1243)";
+           $point = "POINT('31.3421' '52.1243')";
+          //  $db = ConnectionManager::getDataSource('default');
+           // $point = $db->expression("GeomFromText('POINT(31.3421 52.1253)')");
+           // $point = new QueryExpression('GeomFromText(\'POINT( 31.3421 52.1253\')');
+            //$point = GeomFromText('POINT("31.3421 52.1243")');
+           // new Point(5,10);
+          //  $point = new \Cake\Database\Expression\QueryExpression("POINT('31.3421','52.1243')");
+            //$point = new FunctionExpression('POINT','31.3421', '52.1243');
+            $table = $this->Forecasts;
+            //Look if user and weather event combo already exists in Forecasts
+            if ($query = $table->find('all')->where(['user_id' => $user, 'weather_event_id' => $data['weather_event_id']])->first()) {
+                $result = $query;
+            //If doesn't exist, create new   
+            } else {
+                $result = $table->newEntity();
+                $result->user_id = $user;
+                $result->weather_event_id = $data['weather_event_id'];
+            }   
+            $result->location = $point;
+            $result->forecast_date = $data['forecast_date'];
+            $result->am_pm = $data['am_pm'];
+//query testing by kumarfx
+            $forecasts = TableRegistry::get('forecasts');
+            $query = $forecasts->query();
+            $query_result = $query->insert(['user_id', 'weather_event_id','forecast_date','am_pm'])
+                ->values([
+                    'user_id' => $user,
+                    'weather_event_id' => $data['weather_event_id'],
+                    'forecast_date' => $data['forecast_date'],
+                    'am_pm' => $data['am_pm']
+                ])
+                ->execute();
+            echo '<pre>'; print_r($query_result); exit;
+            //$this->Forecasts->query("INSERT INTO forecasts (user_id,weather_event_id,location,forecast_date,am_pm) VALUES ($user,$data['weather_event_id'],GeomFromText('POINT(31.3421 52.1253)')),".$data['forecast_date'].",".$data['am_pm'].");
+            echo '<pre>'; print_r($result); exit;
+            if ($this->Forecasts->save($result)) {
+          //  $query = $table->find('all')->where(['user_id' => $user, 'weather_event_id' => $weather])->first();
+         //   debug($query); debug($query['location']);
+                echo json_encode(['msg' => 'Forecast saved!', 'result' => 1, 'regLog' => 1]);
+            } else {
+                
+            }
+            die;
+        }
     }
     
     //Cron function that checks for forecasts that are within 12 hours of the current time and locks them in.
@@ -166,9 +195,11 @@ class ForecastsController extends AppController
         if ($timeNow < 12) {
             $query = $this->Forecasts->find()->where(['forecast_date' => $dateNow, 'am_pm' => 1]);
             $this->transferHistory($dateForecast,$query);
+          //  $this->Forecasts->deleteAll(['forecast_date' => $dateNow, 'am_pm' => 1]);
         } else {
             $query = $this->Forecasts->find()->where(['forecast_date' => $dateNext, 'am_pm' => 0]);
             $this->transferHistory($dateNextForecast,$query);
+          //  $this->Forecasts->deleteAll(['forecast_date' => $dateNext, 'am_pm' => 0]);
         }
     }
     
@@ -197,8 +228,10 @@ class ForecastsController extends AppController
                 $forecast->forecast_date = $row['forecast_date'];
                 $forecast->forecast_length = $row['forecast_length'];
                 $result = $forecasts->save($forecast);
+                return;
             }
         }
+        return;
     }
     
     public function beforeFilter(Event $event){

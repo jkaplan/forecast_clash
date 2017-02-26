@@ -1,6 +1,6 @@
 <div class="auth">
     <div class="auth-container">
-        <a href="#" class="logo"><img src="../webroot/img/logo-white.png" alt=""> </a>
+        <a href="#" class="logo"><img src="../webroot/img/logo-light-blue.png" alt=""> </a>
         <div class="card">
             <div class="auth-content">
                 <p class="text-xs-center">LOGIN TO CONTINUE</p>
@@ -29,6 +29,10 @@
                         'class' => 'btn btn-block btn-primary login',
                         'type' => 'submit'
                     ]); ?>
+                    <?= $this->Html->link(
+                        'Login with Facebook',
+                        ['controller' => 'Users', 'action' => 'login', '?' => ['provider' => 'Facebook']]
+                    ); ?>
                             <?= $this->Form->end(); ?>
                     </div>
                     <div class="form-group">
@@ -37,7 +41,7 @@
             </div>
         </div>
         <div class="text-xs-center">
-            <a href="/forecast_clash/pages/home" class="btn btn-secondary rounded btn-sm"> <i class="fa fa-arrow-left"></i> Back to dashboard </a>
+            <a href="http://forecastclash.com/forecast_clash/" class="btn btn-secondary rounded btn-sm"> <i class="fa fa-arrow-left"></i> Back to dashboard </a>
         </div>
     </div>
 </div>

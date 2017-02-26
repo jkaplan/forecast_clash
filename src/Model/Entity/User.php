@@ -12,7 +12,9 @@ use Cake\Auth\DefaultPasswordHasher;
  * @property string $password
  * @property int $avatar_id
  * @property string $first_name
+ * @property string $hashval
  * @property string $last_name
+ * @property string $password_reset_token
  * @property bool $meteorologist
  * @property \Cake\I18n\Time $date_created
  *

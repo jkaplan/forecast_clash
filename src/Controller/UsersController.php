@@ -4,6 +4,10 @@ namespace App\Controller;
 use App\Controller\AppController;
 use Cake\Event\Event;
 use Cake\ORM\TableRegistry;
+use Cake\Mailer\Email;
+use Cake\Utility\Text;
+use Cake\Utility\Security;
+use Cake\Routing\Router;
 
 /**
  * Users Controller
@@ -11,10 +15,8 @@ use Cake\ORM\TableRegistry;
  * @property \App\Model\Table\UsersTable $Users
  */
 class UsersController extends AppController
-{
-    
-     public function initialize()
-    {
+{    
+    public function initialize() {
         parent::initialize();
         $this->loadComponent('RequestHandler');
     }
@@ -119,12 +121,12 @@ class UsersController extends AppController
     // Login
     public function login() {
         if ($this->request->is('ajax') || $this->request->query('provider')) {
-            /*if ($this->request->query('provider')) {
-                $config_file_path = 'c:/xampp/htdocs/forecast_clash/vendor/hybridauth/hybridauth/hybridauth/config.php';
-                set_include_path('c:/xampp/htdocs/');
+            if ($this->request->query('provider')) {
+                $config_file_path = '/home/jkaplan/public_html/forecast_clash/vendor/hybridauth/hybridauth/hybridauth/config.php';
+                set_include_path('/home/jkaplan/public_html/');
                 require_once( "forecast_clash/vendor/hybridauth/hybridauth/hybridauth/Hybrid/Auth.php" );
                 $hybridauth = new \Hybrid_Auth( $config_file_path );
-            }*/
+            }
             $user = $this->Auth->identify();
             if ($user) {
                 $this->Auth->setUser($user);
@@ -179,10 +181,87 @@ class UsersController extends AppController
             $this->set('_serialize', ['user']);
             die;
         }
-    } 
+    }
+    
+    //Function to send email to provided address with link to reset password.
+    public function forgotPassword() {
+        if ($this->request->is('ajax')) {
+            if (!empty($this->request->data)) {
+                $email = $this->request->data['email'];
+                $user = $this->Users->findByEmail($email)->first();
+                if (!empty($user)) {
+                    $password = sha1(Text::uuid());
+                    $password_token = Security::hash($password, 'sha256', true);
+                    $hashval = sha1($user->username . rand(0, 100));
+                    $user->password_reset_token = $password_token;
+                    $user->hashval = $hashval;
+                    $reset_token_link = Router::url(['controller' => 'Users', 'action' => 'resetPassword'], TRUE) . '/' . $password_token . '#' . $hashval;
+                    $email = new Email();
+                    $email->from('donotreply@forecastclash.com', 'Forecast Clash')
+                        ->to('john.liotta@gmail.com', 'John')
+                        ->template('default', 'default')
+                        ->subject('Reset your Forecast Clash password')
+                        ->send($reset_token_link);
+                    $this->Users->save($user);
+                    echo json_encode(['msg' => 'Email sent with password reset instructions!', 'result' => 1, 'regLog' => 0]);
+                    die;
+                } else {
+                    echo json_encode(['msg' => 'Provided email not associated with an active Forecast Clash account.', 'result' => 0, 'regLog' => 1]);
+                    die;
+                }
+            }
+        }
+    }
+    
+    public function resetPassword() {
+        if ($this->request->is('ajax')) {
+            if (!empty($this->request->data)) {
+                $token = $this->request->data['token'];
+                $user = $this->Users->findByPasswordResetToken($token)->first();
+                if ($user) {
+                    $user = $this->Users->patchEntity($user, [
+                        'password' => $this->request->data['new_password'],
+                        'new_password' => $this->request->data['new_password'],
+                        'confirm_password' => $this->request->data['confirm_password']
+                    ]);
+                    if($user->errors()){
+                        $error_msg = [];
+                        foreach( $user->errors() as $errors){
+                            if(is_array($errors)){
+                                foreach($errors as $error){
+                                    $error_msg[] = $error;
+                                }
+                            }else{
+                                $error_msg[] = $errors;
+                            }
+                        }
+                    }
+                    $hashval_new = sha1($user->username . rand(0, 100));
+                    $user->password_reset_token = $hashval_new;
+                    if ($this->Users->save($user)) {
+                        echo json_encode(['msg' => 'Your password has been changed successfully', 'result' => 1, 'regLog' => 0]);
+                    } else {
+                        echo json_encode(['msg' => $error_msg, 'result' => 0, 'regLog' => 0]);
+                    }
+                } else {
+                    echo json_encode(['msg' => 'Sorry your password token has expired.', 'result' => 0, 'regLog' => 3]);
+                }
+            } else {
+                echo json_encode(['msg' => 'Error loading password reset.', 'result' => 0, 'regLog' => 1]);
+            }
+            $this->set(compact('user'));
+            $this->set('_serialize', ['user']);
+            die;
+        } else {
+            $url = Router::url("",true);
+            $toke = explode('reset-password/', $url);
+            $token = $toke[1];
+            $this->set('token', $token);
+        }
+    }
     
     public function beforeFilter(Event $event){
-        $this->Auth->allow('login','register');
+        $this->Auth->allow();
     }
 
 }

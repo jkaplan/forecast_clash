@@ -37,13 +37,15 @@
 <body>
     <div class="main-wrapper">
         <div class="app" id="app">
-            <?= $this->Flash->render() ?>
             <div class="container-fluid clearfix">
                 <?= $this->fetch('content') ?>
             </div>
-            
+
+
+
+
             <!-- login script -->
-            <?= $this->Html->script('login'); ?>
+            <?= $this->Html->script('users'); ?>
 
             <script>
                 $(document).ready(function() {

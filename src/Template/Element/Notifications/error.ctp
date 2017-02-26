@@ -1,4 +1,4 @@
-<!-- Success Notification -->
+<!-- Error Notification -->
 
 <div class="row error-notification">
     <div class="col col-xs-12 col-sm-12 col-md-6 col-xl-5">
